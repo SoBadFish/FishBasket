@@ -1,0 +1,36 @@
+{
+    "format_version":"1.10.0",
+    "minecraft:attachable":{
+        "description":{
+            "identifier":"minecraft:fish_basket",
+            "materials":{
+                "default":"entity_alphatest",
+                "enchanted":"entity_alphatest_glint"
+            },
+            "textures":{
+                "default":"textures/entity/fish_basket_hasfish",
+                "enchanted":"textures/misc/enchanted_item_glint"
+            },
+            "animations": {
+                "first_hold": "animation.model.fish.basket.scale.three",
+                "three_hold": "animation.model.fish.basket.scale"
+            },
+            "scripts": {
+                "animate": [
+                    {
+                        "first_hold": "c.is_first_person"
+                    },
+                    {
+                        "three_hold": "!c.is_first_person"
+                    }
+                ]
+            },
+            "geometry":{
+                "default":"geometry.fish_basket.item"
+            },
+            "render_controllers":[
+                "controller.render.item_default"
+            ]
+        }
+    }
+}

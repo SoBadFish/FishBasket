@@ -1,0 +1,13 @@
+{
+	"resource_pack_name": "FishBasket Item",
+	"texture_name":"atlas.items",
+	"texture_data":
+	{
+		"fb_yver": {
+			"textures":"textures/items/fb_yver.png"
+		},
+		"fb_basket": {
+			"textures":"textures/items/fb_basket.png"
+		}
+	}
+}

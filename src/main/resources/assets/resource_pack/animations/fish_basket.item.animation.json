@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.model.fish.basket.scale": {
+			"loop": true,
+			"bones": {
+				"fishbasket": {
+					"position": [-12, 11, -3],
+					"scale": 0.2
+				}
+			}
+		},
+		"animation.model.fish.basket.scale.three": {
+			"loop": true,
+			"bones": {
+				"fishbasket": {
+					"rotation": [0.10383, 2.69324, 0.96942],
+					"position": [10, -14, 18]
+				}
+			}
+		}
+	}
+}

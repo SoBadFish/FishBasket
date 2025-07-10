@@ -1,0 +1,17 @@
+{
+   "format_version" : 1,
+   "header" : {
+      "description" : "§a鱼篓材质",
+      "name" : "§6鱼篓专属材质包",
+      "uuid" : "94ee6590-0d89-42cf-8c77-b896bcf0b8b1",
+      "version" : [ 0, 0, 42 ]
+   },
+   "modules" : [
+      {
+         "description" : "§a鱼篓材质",
+         "type" : "resources",
+         "uuid" : "37d0288b-a932-4123-a9de-6e20d29502af",
+         "version" : [ 0, 0, 42 ]
+      }
+   ]
+}

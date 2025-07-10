@@ -1,0 +1,49 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fishbasket:basket",
+			"materials": {
+				"default": "entity_alphatest",
+				"invisible": ""
+			},
+			"textures": {
+				"default": "textures/entity/fish_basket_hasfish"
+
+			},
+			"geometry": {
+				"default": "geometry.fish_basket_0",
+				"has_fish1": "geometry.fish_basket_1",
+				"has_fish2": "geometry.fish_basket_2",
+				"has_fish3": "geometry.fish_basket_3",
+				"has_fish4": "geometry.fish_basket_4",
+				"has_fish5": "geometry.fish_basket_5",
+				"has_fish6": "geometry.fish_basket_6",
+				"has_fish7": "geometry.fish_basket_7",
+				"has_fish8": "geometry.fish_basket_8",
+				"has_fish9": "geometry.fish_basket_9",
+				"has_fish10": "geometry.fish_basket_10",
+				"has_fish11": "geometry.fish_basket_11",
+				"has_fish12": "geometry.fish_basket_12",
+				"has_fish13": "geometry.fish_basket_13",
+				"has_fish14": "geometry.fish_basket_14",
+				"has_fish15": "geometry.fish_basket_15",
+				"has_fish16": "geometry.fish_basket_16",
+				"has_fish17": "geometry.fish_basket_17",
+				"has_fish18": "geometry.fish_basket_18",
+				"has_fish19": "geometry.fish_basket_19",
+				"has_fish20": "geometry.fish_basket_20",
+				"has_fish21": "geometry.fish_basket_21",
+				"has_fish22": "geometry.fish_basket_22",
+				"has_fish23": "geometry.fish_basket_23",
+				"has_fish24": "geometry.fish_basket_24",
+				"has_fish25": "geometry.fish_basket_25",
+				"has_fish26": "geometry.fish_basket_26",
+				"has_fish27": "geometry.fish_basket_27"
+			},
+			"render_controllers": [
+				"controller.render.fish_basket"
+			]
+		}
+	}
+}

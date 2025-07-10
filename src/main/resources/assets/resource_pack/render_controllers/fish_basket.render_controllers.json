@@ -1,0 +1,46 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.fish_basket": {
+      "arrays": {
+          "geometries": {
+            "Array.geometries": [
+              "Geometry.default",
+              "Geometry.has_fish1",
+              "Geometry.has_fish2",
+              "Geometry.has_fish3",
+              "Geometry.has_fish4",
+              "Geometry.has_fish5",
+              "Geometry.has_fish6",
+              "Geometry.has_fish7",
+              "Geometry.has_fish8",
+              "Geometry.has_fish9",
+              "Geometry.has_fish10",
+              "Geometry.has_fish11",
+              "Geometry.has_fish12",
+              "Geometry.has_fish13",
+              "Geometry.has_fish14",
+              "Geometry.has_fish15",
+              "Geometry.has_fish16",
+              "Geometry.has_fish17",
+              "Geometry.has_fish18",
+              "Geometry.has_fish19",
+              "Geometry.has_fish20",
+              "Geometry.has_fish21",
+              "Geometry.has_fish22",
+              "Geometry.has_fish23",
+              "Geometry.has_fish24",
+              "Geometry.has_fish25",
+              "Geometry.has_fish26",
+              "Geometry.has_fish27"
+            ]
+          }
+      },
+      "textures": [
+        "Texture.default"
+      ],
+      "geometry": "Array.geometries[q.variant]",
+      "materials": [ { "*": "Material.default" } ]
+    }
+  }
+}

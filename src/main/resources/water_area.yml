@@ -1,0 +1,7 @@
+# 这个文件代表水域 可以划定水域的范围
+# 其中~代表有多少份的占比
+water_area:
+  "小水潭":
+    - "minecraft:cod~5"
+    - "0:0~2"
+    - "minecraft.salmon~4"
