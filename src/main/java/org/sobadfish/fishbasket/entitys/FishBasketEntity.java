@@ -1,6 +1,5 @@
 package org.sobadfish.fishbasket.entitys;
 
-import cn.nukkit.Server;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.entity.EntityClimateVariant;
 import cn.nukkit.entity.custom.CustomEntity;
@@ -15,7 +14,6 @@ import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.nbt.NBTIO;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.nbt.tag.ListTag;
-import cn.nukkit.scheduler.PluginTask;
 import cn.nukkit.utils.TextFormat;
 import cn.nukkit.utils.Utils;
 import org.sobadfish.fishbasket.FishBasketMainClass;
@@ -123,16 +121,8 @@ public class FishBasketEntity extends Entity implements CustomEntity,EntityClima
         if (fish) {
             //不能影响主线程 扔子线程
             Position location = this.getPosition();
-            Server.getInstance().getScheduler().scheduleDelayedTask(new PluginTask<>(FishBasketMainClass.getINSTANCE()) {
-                @Override
-                public void onRun(int i) {
-                    if(FishBasketEntity.this.isAlive()) {
-                        Item random = FishBasketMainClass.getINSTANCE().waterAreaManager.getRoundItem(location);
-                        addFishToInventory(random);
-                    }
-                }
-            },10);
-
+            Item random = FishBasketMainClass.getINSTANCE().waterAreaManager.getRoundItem(location);
+            addFishToInventory(random);
         }
         if(inventory != null) {
             setFishModel(Math.min(28, inventory.slots.size()));
@@ -140,11 +130,13 @@ public class FishBasketEntity extends Entity implements CustomEntity,EntityClima
             setFishModel(0);
         }
         //隐藏功能 如果附近有掉落物 则直接吸附进去
-        for(Entity dropEntity: level.getEntities()){
-            if(dropEntity instanceof EntityItem drop){
-                if(dropEntity.distance(this) < 2){
-                    if(addFishToInventory(drop.getItem())){
-                        dropEntity.close();
+        if(!close) {
+            for (Entity dropEntity : level.getEntities()) {
+                if (dropEntity instanceof EntityItem drop) {
+                    if (dropEntity.distance(this) < 1.5) {
+                        if (addFishToInventory(drop.getItem())) {
+                            dropEntity.close();
+                        }
                     }
                 }
             }
@@ -204,19 +196,22 @@ public class FishBasketEntity extends Entity implements CustomEntity,EntityClima
     public List<Item> getFishItems(){
         return new ArrayList<>(inventory.slots.values());
     }
+    boolean close;
 
     @Override
     public void close() {
+        close = true;
         for(Item item: this.getFishItems()){
             level.dropItem(this,item);
         }
+        this.inventory.clearAll();
         //掉落鱼饵
         if(this.fishFood > 0){
             FishFoodItem fishFoodItem = new FishFoodItem();
             fishFoodItem.setCount(fishFood);
-
-            level.dropItem(this,fishFoodItem);
             fishFood = 0;
+            level.dropItem(this,fishFoodItem);
+
         }
         super.close();
 

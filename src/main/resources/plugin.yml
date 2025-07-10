@@ -1,7 +1,7 @@
 name: FishBasket
 description: "鱼篓 可用来捕鱼"
 main: org.sobadfish.fishbasket.FishBasketMainClass
-version: 1.0.1
+version: 1.0.2
 api:
   - 1.0.11
   - 3.0.0
